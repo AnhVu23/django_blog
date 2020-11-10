@@ -14,6 +14,9 @@ class Post(models.Model):
     def __str__(self):
         return f'Post {self.title}'
 
-
+    '''
+        It is used to redirect browser to a specific url after an entity of model is created. Besides,
+        it is good for DRY.
+    '''
     def get_absolute_url(self):
         return reverse('blog-post', kwargs={'pk': self.pk})
